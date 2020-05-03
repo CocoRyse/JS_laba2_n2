@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div>
+        <h1>Дерево каталогов</h1>
+        <ul>
+            <li class="root folder">
+                <span>Каталог</span>
+                <ul>
+                    <li class="file"><span>файл.doc</span></li>
+                    <li class="folder">
+                        <span>Так себе контент</span>
+                        <ul>
+                            <li class="file"><span>file.txt</span></li>
+                            <li class="file"><span>sobaka.jpg</span></li>
+                            <li class="folder">
+                                <span>Не на что здесь смотреть</span>
+                                <ul>
+                                    <li class="file"><span>курсач.pdf</span></li>
+                                    <li class="file"><span>panin.webm</span></li>
+                                    <li class="file"><span>Сибирские Крысы.mp4</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="file"><span>Какой-то ещё файлик.bin</span></li>
+                    <li class="folder">
+                        <span>Пустая папка</span>
+                        <ul></ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="controls">
+        <input type="text">
+        <button>Добавить</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
