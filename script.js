@@ -59,4 +59,35 @@ class Folder {
         this.innerFolders[name] = new Folder(newFolder);
     }
 }
+​
+function handleButtonClick(root) {
+    const input = document.querySelector('input');
+    if (!input.value || input.value.length === 0)
+        return;
+​
+    let path = input.value.split('/');
+    if (path.length < 3 || root.name !== path[1])
+        return;
+​
+    const fileName = path.slice(path.length - 1)[0];
+    path = path.slice(1, length - 1);
+    if (!fileName.includes('.'))
+        return;
+​
+    let currentFolder = root;
+    for (let i = 0; i < path.length - 1; i++) {
+        if (currentFolder.name !== path[i])
+            return; // бан
+    ​
+        if (!currentFolder.innerFolders[path[i + 1]]) {
+            // снова можно создать директорию, но нужно ли?
+            currentFolder.addFolder(path[i + 1]);
+            currentFolder = currentFolder.innerFolders[path[i + 1]];
+            // return
+        } else {
+            currentFolder = currentFolder.innerFolders[path[i + 1]]
+        }
+    }
+    currentFolder.addFile(fileName)
+}
 
