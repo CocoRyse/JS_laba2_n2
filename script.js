@@ -65,7 +65,7 @@ function handleButtonClick(root) {
         return;
 
     let path = input.value.split('/');
-    if (path.length < 3 || root.name !== path[1])
+    if (path.length < 2 || root.name !== path[1])
         return;
 
     const fileName = path.slice(path.length - 1)[0];
